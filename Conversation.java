@@ -12,7 +12,6 @@ class Conversation {
 
     // Print greeting
     System.out.println("Hi there! What's on your mind?");
-    int input.nextInt();
 
 
 
@@ -29,7 +28,7 @@ class Conversation {
       // Start conversation
       for (int i = 0; i <= Rounds; i++) {
           // Get user input
-          userInput = sc.nextLine();
+          userInput = nextLine();
 
           // Generate bot response
           if (userInput.contains("I") || userInput.contains("you")|| userInput.contains("you")) {
@@ -53,4 +52,3 @@ class Conversation {
     }
   }
 
-}
