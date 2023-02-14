@@ -1,5 +1,5 @@
 
-import java.util.Random;
+//import java.util.Random;
 import java.util.Scanner;
 
 class Conversation {
@@ -17,12 +17,12 @@ class Conversation {
 
         // Initialize variables
         String userInput;
-        String[] responses = {
-            "Interesting, tell me more.",
-            "That sounds like a challenging problem.",
-            "That sounds like fun!",
-            "That's cool!"
-        };
+        ///String[] responses = {
+            //"Interesting, tell me more.",
+            //"That sounds like a challenging problem.",
+            //"That sounds like fun!",
+            //"That's cool!"
+        //};
 
         // Start conversation
         for (int count = 0; count <= Rounds; count++) {
@@ -41,6 +41,9 @@ class Conversation {
               response += "you";
             } else if (words[i].equalsIgnoreCase("am")) {
               response += "are";
+            } else if (words[i].equalsIgnoreCase("are")) {
+              response += "am";
+              
             } else {
               response += words[i];
             }
