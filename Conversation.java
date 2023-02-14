@@ -17,12 +17,12 @@ class Conversation {
 
         // Initialize variables
         String userInput;
-        ///String[] responses = {
-            //"Interesting, tell me more.",
-            //"That sounds like a challenging problem.",
-            //"That sounds like fun!",
-            //"That's cool!"
-        //};
+        String[] responses = {
+            "Interesting, tell me more.",
+            "That sounds like a challenging problem.",
+            "That sounds like fun!",
+            "That's cool!"
+        };
 
         // Start conversation
         for (int count = 0; count <= Rounds; count++) {
@@ -33,6 +33,9 @@ class Conversation {
           String[] words = userInput.split(" ");
           String response = " ";
           for (int i = 0; i < words.length; i++) {
+            if (i!=0){
+              response+= " ";
+            }
             if (words[i].equalsIgnoreCase("I")) {
               response += "You";
             } else if (words[i].equalsIgnoreCase("you")) {
@@ -47,11 +50,11 @@ class Conversation {
             } else {
               response += words[i];
             }
-          response += " ";
           }
-        
-
-
+        if (response.equals (userInput)){
+          response= responses[0];
+          
+        }
             // Print bot response
             System.out.println(response);
         }
