@@ -1,5 +1,6 @@
 
 //import java.util.Random;
+//import java.util.Random;
 import java.util.Scanner;
 
 class Conversation {
@@ -9,6 +10,7 @@ class Conversation {
     Scanner input = new Scanner(System.in)) {
       System.out.println("How many rounds?");
       int Rounds = input.nextInt();
+    //Random Rand = new Random();
 
       // Print greeting
       System.out.println("Hi there! What's on your mind?");
@@ -17,7 +19,7 @@ class Conversation {
 
         // Initialize variables
         String userInput;
-        String[] responses = {
+        String cannedArray[] = {
             "Interesting, tell me more.",
             "That sounds like a challenging problem.",
             "That sounds like fun!",
@@ -46,13 +48,18 @@ class Conversation {
               response += "are";
             } else if (words[i].equalsIgnoreCase("are")) {
               response += "am";
-              
+            } else if (words[i].equalsIgnoreCase("my")) {
+              response += "your";  
+            } else if (words[i].equalsIgnoreCase("your")) {
+              response += "my";
             } else {
               response += words[i];
             }
           }
         if (response.equals (userInput)){
-          response= responses[0];
+          response= cannedArray[3];
+
+
           
         }
             // Print bot response
