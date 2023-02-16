@@ -8,21 +8,23 @@ import java.util.Scanner;
 class Conversation {
 
   public static void main(String[] args) {
-    try (// Prompt user to enter number of rounds
+    try (
     Scanner input = new Scanner(System.in)) {
+      // Prompt user to enter number of rounds
       System.out.println("How many rounds?");
       int Rounds = input.nextInt();
       Random Rand = new Random();
 
+      // creates a transcript
       List<String> transcript = new ArrayList<String>();
 
       // Print greeting
       System.out.println("Hi there! What's on your mind?");
-
+    // adds greeting to transcript
 	transcript.add("Hi there! What's on your mind?");
 
 
-        // Initialize variables
+        // Initialize variables and creates canned reponces
         String userInput;
         String cannedArray[] = {
             "Interesting, tell me more.",
@@ -31,13 +33,14 @@ class Conversation {
             "That's cool!"
         };
 
-        // Start conversation
+        // count rounds of conversation 
         for (int count = 0; count <= Rounds; count++) {
             // Get user input
             userInput = input.nextLine();
             transcript.add(userInput);
 
-            // Generate bot response
+            // Generate bot response 
+            // mirroring responce
           String[] words = userInput.split(" ");
           String response = "";
           Boolean personal = false;
@@ -70,6 +73,7 @@ class Conversation {
               response += words[i];
             }
           }
+          //print canned responces
         if (!personal) {
         // or if (response == userInput) {
           int index = Rand.nextInt();
@@ -82,9 +86,7 @@ class Conversation {
         }
       }
     // Print goodbye and conversation transcript
-      System.out.println("Well, it was nice talking to you. Here is a transcript of our conversation:");
-      //System.out.println(userInput);
-      //System.out.println(response);
+    System.out.println("Well, it was nice talking to you. Here is a transcript of our conversation:");
     System.out.println(Arrays.toString(transcript));
     
   }
