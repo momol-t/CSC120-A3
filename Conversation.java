@@ -1,6 +1,6 @@
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -33,11 +33,17 @@ class Conversation {
             "That's cool!"
         };
 
+
+        //
+
         // count rounds of conversation 
-        for (int count = 0; count <= Rounds; count++) {
+        for (int count = 0; count < Rounds; count++) {
             // Get user input
-            userInput = input.nextLine();
-            transcript.add(userInput);
+            userInput = "";
+            while(userInput == "") {
+              userInput = input.nextLine();
+              }
+        transcript.add(userInput);
 
             // Generate bot response 
             // mirroring responce
@@ -78,16 +84,20 @@ class Conversation {
         // or if (response == userInput) {
           int index = Rand.nextInt();
           response = cannedArray[index % cannedArray.length];
-          transcript.add(response);
         }
+        transcript.add(response);
+      
         
             // Print bot response
             System.out.println(response);
         }
-      }
+      
     // Print goodbye and conversation transcript
     System.out.println("Well, it was nice talking to you. Here is a transcript of our conversation:");
-    System.out.println(Arrays.toString(transcript));
+    for (String line : transcript){
+    System.out.println(line);
+    }
+    }
     
   }
 }
